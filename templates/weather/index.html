@@ -1,0 +1,64 @@
+{% extends 'weather/base.html' %}
+
+{% block title %}
+        <title>Wheather_App</title>
+{% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+      <header>
+        <i class="bx bx-arrow-back bx-flashing"></i>
+        {{ data }}
+      </header>
+      <section class="weather-part">
+          {% if situatsiya == 'clear sky' %}
+              <img src="https://media3.giphy.com/media/3oEjHGZkrolm9UgvM4/giphy.gif?cid=ecf05e474axu0gecbs8xiumgze9u3sdr8ydb8sb5t0tgse58&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="" />
+
+          {% elif situatsiya == 'Heavy rain' %}
+              <img src="https://cdn.dribbble.com/users/186452/screenshots/1733456/weather-3.gif" alt="" />
+
+          {% elif situatsiya == 'broken clouds' %}
+              <img src="https://static.thenounproject.com/png/3267952-200.png" alt="" />
+
+
+          {% elif situatsiya == 'overcast clouds' %}
+              <img src="https://cdn.icon-icons.com/icons2/857/PNG/512/weather-2_icon-icons.com_67742.png" alt="" />
+
+          {% else %}
+              <img src="https://media3.giphy.com/media/3oEjHGZkrolm9UgvM4/giphy.gif?cid=ecf05e474axu0gecbs8xiumgze9u3sdr8ydb8sb5t0tgse58&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="" />
+          {% endif %}
+
+        <div class="temp">
+          <span class="numb"></span>
+          <span class="deg">{{ temperatura }}°C</span>
+        </div>
+        <div class="weather">_ _</div>
+        <div class="location">
+          <i class="bx bx-map"></i>
+          <span>{{ name }}</span>
+        </div>
+        <div class="bottom-details">
+          <div class="column feels">
+            <i class="bx bxs-thermometer"></i>
+            <div class="details">
+              <div class="temp">
+                <span class="numb-2"></span>
+                <span class="deg">{{ temperatura }}°C</span>
+              </div>
+              <p>Feels like</p>
+            </div>
+          </div>
+          <div class="column humidity">
+            <i class="bx bxs-droplet-half"></i>
+            <div class="details">
+                <span>{{ namlik }}</span>
+              <p>Humidity</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+{% endblock content %}
